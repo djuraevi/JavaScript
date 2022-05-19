@@ -33,20 +33,18 @@ console.log(declinationOfNumber(5, "стул", "стула", "стульев"));
    * @param {string} five - третий вариант слова
    * @return {string} склонение слова в зависимости от аргумента count.
    */
-  
   function declinationOfNumber(count, one, two, five) {
-
     const numberUnit = Math.abs(count) % 10;
+    const numberTens = Math.abs(count) % 100
 
-    if (numberUnit === 1) {
+    if (numberTens >= 5 && numberTens <= 20) {
+      return five;
+    } else if (numberUnit === 1) {
       return one;
     } else if (numberUnit > 1 && numberUnit < 5) {
       return two;
-    } else if (count >= 5 && count >= 20) {
-      return five;
-    }
+    } 
     return five;
-    
   }
 
   // Число яблок, можно пробовать поставить свое целое, положительное число.

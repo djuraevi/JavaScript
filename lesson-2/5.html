@@ -41,25 +41,23 @@ Infinity делать не нужно, однако, в случае если б
    * @return {number} получаем ответ в зависимости от заданых аргументов,
    * если введены некоректные значения на выходе получим NaN
    */
-
   function mathOperation(arg1, arg2, operation) {
     switch (operation) {
-      case "+": return getResultPlus (arg1, arg2);
-      case "-": return getResultMinus (arg1, arg2);
-      case "*": return getResultTimes (arg1, arg2);
+      case "+": return getResultPlus(arg1, arg2);
+      case "-": return getResultMinus(arg1, arg2);
+      case "*": return getResultTimes(arg1, arg2);
       case "/": return getResultDivided(arg1, arg2);
       default: return NaN;
     }
-    }
+  }
 
-     /**
+  /**
    * Подсчитывает сумму двух аргументов
    * @param {number} arg1 - первое число
    * @param {number} arg2 - второе число
    * @return {number} сумма чисел
    */
-
-  function getResultPlus (arg1, arg2) {
+  function getResultPlus(arg1, arg2) {
     return arg1 + arg2;
   }
 
@@ -69,8 +67,7 @@ Infinity делать не нужно, однако, в случае если б
    * @param {number} arg2 - второе число
    * @return {number} разность чисел
    */
-
-  function getResultMinus (arg1, arg2) {
+  function getResultMinus(arg1, arg2) {
       if (arg1 > arg2){
         return arg1 - arg2
       } else {
@@ -84,8 +81,7 @@ Infinity делать не нужно, однако, в случае если б
    * @param {number} arg2 - второе число
    * @return {number} произведение чисел
    */
-
-  function getResultTimes (arg1, arg2) {
+  function getResultTimes(arg1, arg2) {
     return arg1 * arg2;
   }
 
@@ -95,8 +91,7 @@ Infinity делать не нужно, однако, в случае если б
    * @param {number} arg2 - второе число
    * @return {number} частное чисел
    */
-
-  function getResultDivided (arg1, arg2) {
+  function getResultDivided(arg1, arg2) {
     return arg1 / arg2;
   }
 
