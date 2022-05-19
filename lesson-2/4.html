@@ -32,49 +32,53 @@
   "use strict";
 
   /**
-   * Считает сумму переданных аргументов.
-   * @param {number} a - Первое число.
-   * @param {number} b - Второе число.
-   * @return {number} Сумма чисел.
+   * Подсчитывает сумму двух аргументов
+   * @param {number} argFirst - первое число
+   * @param {number} argSecond - второе число
+   * @return {number} сумма чисел
    */
-  function sum(a, b) {
-    return a + b;
+
+  function getResultPlus (argFirst, argSecond) {
+    return argFirst + argSecond;
   }
 
-  /**
-   * Считает разницу переданных аргументов.
-   * @param {number} a - Первое число.
-   * @param {number} b - Второе число.
-   * @return {number} Разница чисел.
+   /**
+   * Подсчитывает разность двух аргументов
+   * @param {number} argFirst - первое число
+   * @param {number} argSecond - второе число
+   * @return {number} разность чисел
    */
-  function difference(a, b) {
-    if (a > b) {
-      return a - b;
-    }
-    return b - a;
-    // Или можно просто:
-    // return Math.abs(a - b);
+
+   function getResultMinus (argFirst, argSecond) {
+      if (argFirst > argSecond){
+        return argFirst - argSecond
+      } else {
+        return argSecond - argFirst
+      }       
   }
 
-  /**
-   * Считает произведение переданных аргументов.
-   * @param {number} a - Первое число.
-   * @param {number} b - Второе число.
-   * @return {number} Проиведение чисел.
+   /**
+   * Подсчитывает произведение двух аргументов
+   * @param {number} argFirst - первое число
+   * @param {number} argSecond - второе число
+   * @return {number} произведение чисел
    */
-  function multiplication(a, b) {
-    return a * b;
+
+   function getResultTimes (argFirst, argSecond) {
+    return argFirst * argSecond;
   }
 
-  /**
-   * Считает частное переданных аргументов.
-   * @param {number} a - Первое число.
-   * @param {number} b - Второе число.
-   * @return {number} Частное чисел.
+   /**
+   * Подсчитывает частное двух аргументов
+   * @param {number} argFirst - первое число
+   * @param {number} argSecond - второе число
+   * @return {number} частное чисел
    */
-  function division(a, b) {
-    return a / b;
+
+   function getResultDivided (argFirst, argSecond) {
+    return argFirst / argSecond;
   }
+
 </script>
 </body>
 </html>

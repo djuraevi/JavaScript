@@ -33,68 +33,73 @@ Infinity делать не нужно, однако, в случае если б
   "use strict";
 
   /**
-   * Вычисляет операцию, переданную в третий параметр между двумя первыми
-   * аргументами функции.
-   * @param {number} arg1 - Первое число.
-   * @param {number} arg2 - Второе число.
-   * @param {string} operation - Операция, одна из возможных строк:
-   * "+", "-", "*", "/".
-   * @return {number} Результат операции operation над первыми двумя аргументами
-   * функции. Может вернуть NaN, если operation или первые два аргумента заданы
-   * неверно.
+   * Функция высчитывает матемаческие операции между двумя аргументами, в 
+   * зависимости от третьего аргумента - математического оператора
+   * @param {number} arg1 - первое число
+   * @param {number} arg2 - второе число
+   * @param {string} operation - передается математический оператор
+   * @return {number} получаем ответ в зависимости от заданых аргументов,
+   * если введены некоректные значения на выходе получим NaN
    */
+
   function mathOperation(arg1, arg2, operation) {
     switch (operation) {
-      case "+": return sum(arg1, arg2);
-      case "-": return difference(arg1, arg2);
-      case "*": return multiplication(arg1, arg2);
-      case "/": return division(arg1, arg2);
+      case "+": return getResultPlus (arg1, arg2);
+      case "-": return getResultMinus (arg1, arg2);
+      case "*": return getResultTimes (arg1, arg2);
+      case "/": return getResultDivided(arg1, arg2);
       default: return NaN;
     }
-  }
-
-  /**
-   * Считает сумму переданных аргументов.
-   * @param {number} a - Первое число.
-   * @param {number} b - Второе число.
-   * @return {number} Сумма чисел.
-   */
-  function sum(a, b) {
-    return a + b;
-  }
-
-  /**
-   * Считает разницу переданных аргументов.
-   * @param {number} a - Первое число.
-   * @param {number} b - Второе число.
-   * @return {number} Разница чисел.
-   */
-  function difference(a, b) {
-    if (a > b) {
-      return a - b;
     }
-    return b - a;
+
+     /**
+   * Подсчитывает сумму двух аргументов
+   * @param {number} arg1 - первое число
+   * @param {number} arg2 - второе число
+   * @return {number} сумма чисел
+   */
+
+  function getResultPlus (arg1, arg2) {
+    return arg1 + arg2;
   }
 
-  /**
-   * Считает произведение переданных аргументов.
-   * @param {number} a - Первое число.
-   * @param {number} b - Второе число.
-   * @return {number} Проиведение чисел.
+     /**
+   * Подсчитывает разность двух аргументов
+   * @param {number} arg1 - первое число
+   * @param {number} arg2 - второе число
+   * @return {number} разность чисел
    */
-  function multiplication(a, b) {
-    return a * b;
+
+  function getResultMinus (arg1, arg2) {
+      if (arg1 > arg2){
+        return arg1 - arg2
+      } else {
+        return arg2 - arg1
+      }       
   }
 
-  /**
-   * Считает частное переданных аргументов.
-   * @param {number} a - Первое число.
-   * @param {number} b - Второе число.
-   * @return {number} Частное чисел.
+     /**
+   * Подсчитывает произведение двух аргументов
+   * @param {number} arg1 - первое число
+   * @param {number} arg2 - второе число
+   * @return {number} произведение чисел
    */
-  function division(a, b) {
-    return a / b;
+
+  function getResultTimes (arg1, arg2) {
+    return arg1 * arg2;
   }
+
+     /**
+   * Подсчитывает частное двух аргументов
+   * @param {number} arg1 - первое число
+   * @param {number} arg2 - второе число
+   * @return {number} частное чисел
+   */
+
+  function getResultDivided (arg1, arg2) {
+    return arg1 / arg2;
+  }
+
 </script>
 </body>
 </html>
