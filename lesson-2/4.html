@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо реализовать четыре функции, каждая функция должна принимать по два
+числа и выполнять одну из операций (каждая функция выполняет одну из них):
+1. Сложение
+2. Разность
+3. Умножение
+4. Деление
+
+Необходимо сделать так, чтобы функция вернула число, например выражение
+`console.log(sum(2, 6));` должно вывести число 8 в консоль (sum - функция
+сложения в данном примере, ваши названия функций могут отличаться).
+
+Округлять значения, которые возвращают функции не нужно, однако, обратите
+внимание на разность, функция должна вычесть из большего числа меньшее, либо
+вернуть 0, если числа равны.
+
+Функциям всегда передаются корректные числа, проверки на NaN, Infinity делать
+не нужно.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<script>
+  "use strict";
+
+  /**
+   * Подсчитывает сумму двух аргументов
+   * @param {number} argFirst - первое число
+   * @param {number} argSecond - второе число
+   * @return {number} сумма чисел
+   */
+  function getResultPlus(argFirst, argSecond) {
+    return argFirst + argSecond;
+  }
+
+   /**
+   * Подсчитывает разность двух аргументов
+   * @param {number} argFirst - первое число
+   * @param {number} argSecond - второе число
+   * @return {number} разность чисел
+   */
+  function getResultMinus(argFirst, argSecond) {
+    if (argFirst > argSecond){
+      return argFirst - argSecond;
+    } 
+    return argSecond - argFirst;       
+  }
+
+   /**
+   * Подсчитывает произведение двух аргументов
+   * @param {number} argFirst - первое число
+   * @param {number} argSecond - второе число
+   * @return {number} произведение чисел
+   */
+  function getResultTimes(argFirst, argSecond) {
+    return argFirst * argSecond;
+  }
+
+   /**
+   * Подсчитывает частное двух аргументов
+   * @param {number} argFirst - первое число
+   * @param {number} argSecond - второе число
+   * @return {number} частное чисел
+   */
+  function getResultDivided(argFirst, argSecond) {
+    return argFirst / argSecond;
+  }
+
+</script>
+</body>
+</html>

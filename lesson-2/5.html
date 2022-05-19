@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(arg1, arg2, operation);
+Параметры:
+arg1 - первое число.
+arg2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (arg1 и arg2).
+Функция mathOperation должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<script>
+  "use strict";
+
+  /**
+   * Функция высчитывает матемаческие операции между двумя аргументами, в 
+   * зависимости от третьего аргумента - математического оператора
+   * @param {number} arg1 - первое число
+   * @param {number} arg2 - второе число
+   * @param {string} operation - передается математический оператор
+   * @return {number} получаем ответ в зависимости от заданых аргументов,
+   * если введены некоректные значения на выходе получим NaN
+   */
+  function mathOperation(arg1, arg2, operation) {
+    switch (operation) {
+      case "+": return getResultPlus(arg1, arg2);
+      case "-": return getResultMinus(arg1, arg2);
+      case "*": return getResultTimes(arg1, arg2);
+      case "/": return getResultDivided(arg1, arg2);
+      default: return NaN;
+    }
+  }
+
+  /**
+   * Подсчитывает сумму двух аргументов
+   * @param {number} arg1 - первое число
+   * @param {number} arg2 - второе число
+   * @return {number} сумма чисел
+   */
+  function getResultPlus(arg1, arg2) {
+    return arg1 + arg2;
+  }
+
+     /**
+   * Подсчитывает разность двух аргументов
+   * @param {number} arg1 - первое число
+   * @param {number} arg2 - второе число
+   * @return {number} разность чисел
+   */
+  function getResultMinus(arg1, arg2) {
+      if (arg1 > arg2){
+        return arg1 - arg2
+      } else {
+        return arg2 - arg1
+      }       
+  }
+
+     /**
+   * Подсчитывает произведение двух аргументов
+   * @param {number} arg1 - первое число
+   * @param {number} arg2 - второе число
+   * @return {number} произведение чисел
+   */
+  function getResultTimes(arg1, arg2) {
+    return arg1 * arg2;
+  }
+
+     /**
+   * Подсчитывает частное двух аргументов
+   * @param {number} arg1 - первое число
+   * @param {number} arg2 - второе число
+   * @return {number} частное чисел
+   */
+  function getResultDivided(arg1, arg2) {
+    return arg1 / arg2;
+  }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Необязательное задание.
+
+Необходимо реализовать функцию, которая будет принимать первым аргументом
+целое положительное число, в следующих трех аргументах функция принимает слова
+в разных склонениях.
+Функция должна возвращать одно из трех переданных в параметры слов подходящее
+под число, которое передано первым аргументом.
+
+Пример:
+console.log(declinationOfNumber(1, "яблоко", "яблока", "яблок")); // "яблоко"
+console.log(declinationOfNumber(2, "мяч", "мяча", "мячей")); // "мяча"
+console.log(declinationOfNumber(5, "стул", "стула", "стульев")); // "стульев"
+
+Функция должна работать с любым словом и любым целым положительным числом.
+Все аргументы, которые будут передаваться функции будут верны.
+-->
+<script>
+  "use strict";
+
+  /**
+   * Функция выдает склонение слова по числительному
+   * @param {number} count - числительное
+   * @param {string} one - первый вариант слова
+   * @param {string} two - второй вариант слова
+   * @param {string} five - третий вариант слова
+   * @return {string} склонение слова в зависимости от аргумента count.
+   */
+  function declinationOfNumber(count, one, two, five) {
+    const numberUnit = Math.abs(count) % 10;
+    const numberTens = Math.abs(count) % 100
+
+    if (numberTens >= 5 && numberTens <= 20) {
+      return five;
+    } else if (numberUnit === 1) {
+      return one;
+    } else if (numberUnit > 1 && numberUnit < 5) {
+      return two;
+    } 
+    return five;
+  }
+
+  // Число яблок, можно пробовать поставить свое целое, положительное число.
+  const applesNumber = 60;
+  // Получаем от функции одно из слов "яблоко", "яблока" или "яблок".
+  const word = declinationOfNumber(applesNumber, "яблоко", "яблока", "яблок");
+  const word1 = declinationOfNumber(applesNumber, "мяч", "мяча", "мячей");
+  const word2 = declinationOfNumber(applesNumber, "стул", "стула","стульев");
+  // Выводим корректную строку, например:
+  // "У меня есть 1 яблоко."
+  // "У меня есть 2 яблока."
+  // "У меня есть 5 яблок."
+  // При любом целом, положительном числе в applesNumber, строка, которая
+  // выводится в console.log, должна иметь правильное склонение слова "яблоко".
+  console.log(`У меня есть ${applesNumber} ${word}.`);
+  console.log(`У меня есть ${applesNumber} ${word1}.`);
+  console.log(`У меня есть ${applesNumber} ${word2}.`);
+
+
+</script>
+</body>
+</html>
