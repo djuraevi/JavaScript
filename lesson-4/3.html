@@ -31,28 +31,27 @@
 <script>
   "use strict";
 
-  /**
-   * Функция разбивает число по разрядам и возвращает объект с записанными
-   * разрядами числа.
-   * @param {number} num - Число в диапазоне [0, 999], которое разобьется на
-   * разряды.
-   * @returns {object} Объект с разрядами числа или пустой объект в случае
-   * ошибки.
-   */
-  function getDigitsOfNumber(num) {
-    if (!Number.isInteger(num) || num < 0 || num > 999) {
-      console.error('Wrong argument, it must be an integer in range [0, 999].');
-      return {};
-    }
+  let objectNumber = new Object();
 
-    return {
-      units: num % 10,
-      dozens: Math.floor(num / 10) % 10,
-      hundreds: Math.floor(num / 100),
-    };
+  /**
+   * Функция разбивающее число на еденицы, десятки и сотни.
+   * @param {number} number - принимает число от 0 до 999.
+   * @return {object} вывод обьекта с разбитием числа на единицы, десятки
+   * и сотни.
+   */
+  function getDigitsOfNumber(number) {
+    if (Number.isInteger(number) && number > 0 && number < 1000) {
+      objectNumber.units = number % 10;
+      objectNumber.dozens = Math.trunc(number / 10) % 10;
+      objectNumber.hubdreds = Math.trunc(number / 100) % 10;
+      return console.log(objectNumber);
+    } 
+    console.error(`Задано не верное число: ${number}`);
+    return console.log(objectNumber);
   }
 
-  console.log(getDigitsOfNumber(123));
+  getDigitsOfNumber(658);
+
 </script>
 </body>
 </html>
