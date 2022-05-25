@@ -50,15 +50,7 @@
   console.log(getPhotos);
 
   // 2 задание
-  products.sort(function(a, b) {
-    if (a.price > b.price) {
-      return 1;
-    }
-    if (a.price < b.price) {
-      return -1;
-    }
-    return 0;
-  });
+  products.sort((a, b) => a.price - b.price);
 
   console.log(products);
 </script>
