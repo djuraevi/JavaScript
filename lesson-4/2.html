@@ -50,74 +50,73 @@
 <script>
   "use strict";
 
-   //---------------------------ES5------------------------
-   function PostES5(autor, text) {
+  //---------------------------ES5------------------------
+  function PostES5(autor, text) {
     this.autor = autor;
     this.text = text;
     this.date = new Date();
-   }
+  }
 
-   PostES5.prototype.editText = function(text) {
-     this.text = text;
-     this.date = new Date();
-   }
+  PostES5.prototype.editText = function (text) {
+    this.text = text;
+    this.date = new Date();
+  }
 
-   const firstPostES5 = new PostES5('Александр', 'текст поста');
-   console.log(firstPostES5);
-   firstPostES5.editText('исправленный текст поста');
-   console.log(firstPostES5);
+  const firstPostES5 = new PostES5('Александр', 'текст поста');
+  console.log(firstPostES5);
+  firstPostES5.editText('исправленный текст поста');
+  console.log(firstPostES5);
 
-   function AttachedPostES5(autor, text) {
+  function AttachedPostES5(autor, text) {
     PostES5.call(this, autor, text);
     this.highlighted = false;
-   }
+  }
 
-   AttachedPostES5.prototype = Object.create(PostES5.prototype);
-   AttachedPostES5.prototype.constructor = AttachedPostES5;
+  AttachedPostES5.prototype = Object.create(PostES5.prototype);
+  AttachedPostES5.prototype.constructor = AttachedPostES5;
 
-   AttachedPostES5.prototype.makeTextHighlighted = function() {
+  AttachedPostES5.prototype.makeTextHighlighted = function () {
     this.highlighted = true;
-   }
+    this.date = new Date();
+  }
 
-   const secondAttachedPostES5 = new AttachedPostES5('Эрнест', 'текст поста');
-   console.log(secondAttachedPostES5);
-   secondAttachedPostES5.makeTextHighlighted();
-   console.log(secondAttachedPostES5);
+  const secondAttachedPostES5 = new AttachedPostES5('Эрнест', 'текст поста');
+  console.log(secondAttachedPostES5);
+  secondAttachedPostES5.makeTextHighlighted();
+  console.log(secondAttachedPostES5);
 
-   //---------------------------ES6------------------------
-   class PostES6 {
-     constructor(autor, text) {
-       this.autor = autor;
-       this.text = text;
-       this.date = new Date();
-     }
+  //---------------------------ES6------------------------
+  class PostES6 {
+    constructor(autor, text) {
+      this.autor = autor;
+      this.text = text;
+      this.date = new Date();
+    }
 
-     editText(text) {
-       this.text = text;
-       this.date = new Date();
-     }
-   }
+    editText(text) {
+      this.text = text;
+      this.date = new Date();
+    }
+  }
 
-   const firstPostES6 = new PostES6 ('Инокентий', 'текст поста');
-   console.log(firstPostES6);
-   firstPostES6.editText('исправленный текст поста');
-   console.log(firstPostES6);
+  const firstPostES6 = new PostES6 ('Инокентий', 'текст поста');
+  console.log(firstPostES6);
+  firstPostES6.editText('исправленный текст поста');
+  console.log(firstPostES6);
 
-   class AttachedPostES6 extends PostES6 {
-     constructor(autor, text) {
-       super(autor, text);
-       this.highlighted = false;
-     }
+  class AttachedPostES6 extends PostES6 {
+    highlighted = false;
 
-     makeTextHighlighted = function() {
+    makeTextHighlighted() {
        this.highlighted = true;
-     }
-   }
+       this.date = new Date();
+    }
+  }
 
-   const secondAttachedPostES6 = new AttachedPostES6('Эрнест', 'текст поста');
-   console.log(secondAttachedPostES6);
-   secondAttachedPostES5.makeTextHighlighted();
-   console.log(secondAttachedPostES6);
+  const secondAttachedPostES6 = new AttachedPostES6('Эрнест', 'текст поста');
+  console.log(secondAttachedPostES6);
+  secondAttachedPostES5.makeTextHighlighted();
+  console.log(secondAttachedPostES6);
 </script>
 </body>
 </html>

@@ -31,8 +31,6 @@
 <script>
   "use strict";
 
-  let objectNumber = new Object();
-
   /**
    * Функция разбивающее число на еденицы, десятки и сотни.
    * @param {number} number - принимает число от 0 до 999.
@@ -40,14 +38,17 @@
    * и сотни.
    */
   function getDigitsOfNumber(number) {
+    const objectNumber = {};
+
     if (Number.isInteger(number) && number > 0 && number < 1000) {
-      objectNumber.units = number % 10;
-      objectNumber.dozens = Math.trunc(number / 10) % 10;
-      objectNumber.hubdreds = Math.trunc(number / 100) % 10;
-      return console.log(objectNumber);
+      return {
+        units: number % 10,
+        dozens: Math.trunc(number / 10) % 10,
+        hundreds: Math.trunc(number / 100) % 10,
+      };
     } 
     console.error(`Задано не верное число: ${number}`);
-    return console.log(objectNumber);
+    return objectNumber;
   }
 
   getDigitsOfNumber(658);

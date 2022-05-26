@@ -19,6 +19,7 @@
 -->
 <script>
   "use strict";
+
   //---------------------------ES5------------------------
   function ProductES5(name, price) {
     this.name = name;
@@ -27,7 +28,6 @@
 
   ProductES5.prototype.make25Discount = function() {
     this.price *= .75;
-    console.log(`Товар с 25% скидкой стоит ${this.price * .75}.`);
   };
 
   const firstProductES5 = new ProductES5('молоко', '1500');
@@ -39,9 +39,9 @@
       this.name = name;
       this.price = price;
     }
+    
     make25DiscountES6() {
       this.price *= .75;
-      console.log(`Товар с 25% скидкой стоит ${this.price * .75}.`);
     }
   }
 
