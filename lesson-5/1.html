@@ -50,8 +50,7 @@
   3. Найти все элементы на странице с классом "card-link", которые лежат в
   элементе с классом "card-body" и вывести полученную коллекцию в консоль.
    */
-  const cardBody = document.querySelector('.card-body');
-  console.log(cardBody.querySelectorAll('.card-link'));
+  console.log(cardBody.querySelectorAll('.card-body .card-link'));
 
   /*
   4. Найти первый попавшийся элемент на странице у которого есть атрибут
@@ -62,8 +61,7 @@
   /*
   5. Выведите содержимое тега title в консоль.
    */
-  const title = document.querySelector('title');
-  console.log(title.textContent);
+  console.log(document.title);
 
   /*
   6. Получите элемент с классом "card-title" и выведите его родительский узел

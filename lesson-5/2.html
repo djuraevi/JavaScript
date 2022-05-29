@@ -36,7 +36,7 @@
   const dropDownItem = document.querySelectorAll('.dropdown-item');
   dropDownItem.forEach(el => {
     el.classList.add('super-dropdown');
-  })
+  });
 
   /*
   2. У элемента с классом btn необходимо убрать класс "btn-secondary", если он
@@ -71,9 +71,9 @@
   6. Добавьте атрибут data-dd со значением 3 элементу у которого существует
   атрибут "aria-labelledby" равный "dropdownMenuButton" используя dataset.
    */
-  const dataEl = document.querySelector(
-    '[aria-labelledby="dropdownMenuButton"]');
-  dataEl.setAttribute('data-dd', '3');
+  const dataEl = 
+  document.querySelector('[aria-labelledby="dropdownMenuButton"]');
+  dataEl.dataset.dd = '3';
 
   /*
   7. Удалите атрибут type у элемента с классом "dropdown-toggle".

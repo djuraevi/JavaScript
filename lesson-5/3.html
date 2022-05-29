@@ -78,12 +78,10 @@
   Необходимо использовать делегирование.
   */
   document.body.addEventListener('click', event => {
-    let haveClass = 'присутствует';
-    if (!event.target.classList.contains('super_element')){
-      haveClass = 'отсутствует';
-    }
-    console.log(
-      `Класс "super_element" ${haveClass} в элементе ${event.target.tagName}`);
+    const tagName = event.target.tagName.toLowerCase();
+    const haveClass = event.target.classList.contains('super_element')
+    ? 'присутствует' : 'отсутствует';
+    console.log(`Класс "super_element" ${haveClass} в элементе ${tagName}`);
   });
   
   /*
@@ -94,7 +92,7 @@
   const mouseOver = event => {
     console.log("Вы навели на textarea.");
     textareaEl.removeEventListener('mouseover', mouseOver);
-  }
+  };
   textareaEl.addEventListener('mouseover', mouseOver);
 
   /*
@@ -106,10 +104,9 @@
    */
   const ulEl = document.querySelector('ul');
   ulEl.addEventListener('click', event => {
-    if (event.target.tagName === 'BUTTON'){
+    if (event.target.tagName === 'BUTTON') {
       console.log(event.target.textContent);
     }
-    return;
   });
 
   /*
