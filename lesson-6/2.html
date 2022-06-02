@@ -66,9 +66,10 @@
   также должен меняться.
   */
   const inputEl = document.getElementById('from');
-  inputEl.oninput = () => {
-    document.querySelector('span').innerHTML = inputEl.value;
-  };
+  const spanEl = document.querySelector('span');
+  inputEl.addEventListener('input', () => {
+    spanEl.innerHTML = inputEl.value;
+  });  
 
   /*
   2. При клике на кнопку с классом messageBtn необходимо элементу с классом
@@ -97,18 +98,19 @@
   const formElValue = formEl.querySelectorAll('input, select');
 
   formEl.addEventListener('submit', event => {
-      formElValue.forEach(elem => {
-        if (elem.value === '') {
-          elem.classList.add('error');
-          event.preventDefault();
-        }
-      });
+    formElValue.forEach(elem => {
+      if (elem.value === '') {
+        elem.classList.add('error');
+        event.preventDefault();
+      }
+    });
   });
 
   formEl.addEventListener('input', event => {
-    if(!event.target.classList.contains('form-control')) {
+    if (!event.target.classList.contains('form-control')) {
       return;
     }
+
     if (event.target.value === '') {
       event.target.classList.add('error');
     } else {
