@@ -70,13 +70,9 @@
 
     for (const navLink of navLinks ) {
       navLink.classList.remove('active');
-
-      if (navLink === target) {
-        target.classList.add('active');
-        textDiv
-          .textContent = panelText[target.parentElement.dataset.text];
-      }
     }
+    target.classList.add('active');
+    textDiv.textContent = panelText[target.parentElement.dataset.text];
   });
   /*
   2. Необходимо сделать так, чтобы при изменении input'а менялся и размер шрифта
